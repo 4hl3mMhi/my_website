@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record id="course_one" model="product.template">
+            <field name="name">Math</field>
+            <field name="teacher_id" ref="my_website.teacher_one"/>
+            <field name="public_categ_ids" eval="[(4, ref('my_website.category_courses'), False)]"/>
+            <field name="website_published">True</field>
+            <field name="list_price" type="float">0</field>
+            <field name="type">service</field>
+            <field name="image_1920" type="base64" file="my_website/static/img/product_img/math_icon.jpg"/>
+        </record>
+
+        <record id="course_two" model="product.template">
+            <field name="name">Algorithm</field>
+            <field name="teacher_id" ref="my_website.teacher_two"/>
+            <field name="public_categ_ids" eval="[(4, ref('my_website.category_courses'), False)]"/>
+            <field name="website_published">True</field>
+            <field name="list_price" type="float">0</field>
+            <field name="type">service</field>
+            <field name="image_1920" type="base64" file="my_website/static/img/product_img/algorithm_icon.jpg"/>
+        </record>
+
+        <record id="course_three" model="product.template">
+            <field name="name">Cyber security</field>
+            <field name="teacher_id" ref="my_website.teacher_three"/>
+            <field name="public_categ_ids" eval="[(4, ref('my_website.category_courses'), False)]"/>
+            <field name="website_published">True</field>
+            <field name="list_price" type="float">74.01</field>
+            <field name="type">service</field>
+            <field name="image_1920" type="base64" file="my_website/static/img/product_img/cyber_security_icon.png"/>
+        </record>
+    </data>
+</odoo>

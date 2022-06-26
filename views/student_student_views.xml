@@ -1,0 +1,50 @@
+<?xml version="1.8" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record id="view_student_list" model="ir.ui.view">
+      <field name="name">student.student.list</field>
+      <field name="model">student.student</field>
+      <field name="arch" type="xml">
+        <tree string="Students">
+          <field name="name"/>
+          <field name="code"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- explicit form view definition -->
+    <record id="view_student_form" model="ir.ui.view">
+      <field name="name">student.student.form</field>
+      <field name="model">student.student</field>
+      <field name="arch" type="xml">
+        <form string="Student">
+          <sheet>
+            <div class="oe_title">
+              <label for="name" class="oe_edit_only"/>
+              <h1><field name="name"/></h1>
+              <label for="code" class="oe_edit_only"/>
+              <h2><field name="code"/></h2>
+            </div>
+            <label for="biography"/>
+            <field name="biography"/>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record id="action_student_form" model="ir.actions.act_window">
+      <field name="name">Students</field>
+      <field name="res_model">student.student</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="view_student_list"/>
+      <field name="context">{}</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Create a Student
+        </p>
+      </field>
+    </record>
+  </data>
+</odoo>

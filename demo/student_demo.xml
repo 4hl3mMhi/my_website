@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <record id="student_one" model="student.student">
+            <field name="name">Amal Chamlee</field>
+            <field name="code">34AMCH</field>
+            <field name="biography"> I am proud to be a Parkway Early Childhood Panda!!
+I am from St. Louis, received a Bachelor's Degree in Education from the University of Dayton,
+and my Masters in Education from Missouri Baptist University. I am certified to teach Early Childhood,
+Early Childhood Special Education, and Elementary Education. This will be my seventh year at
+Parkway Early Childhood after four years at Kirkwood Early Childhood Center in Early Childhood Special Education.
+            </field>
+        </record>
+
+        <record id="student_two" model="student.student">
+            <field name="name">Bertie Leister</field>
+            <field name="code">28BELT</field>
+            <field name="biography">I am honored and humbled that I have been selected for
+Teacher of the year at Lakeview Middle School. I earned my masters degree MAT in teaching majoring in
+biology from the Citadel 1994. I attended undergrad at Charleston Southern University on a full athletic
+scholarship and received a Bachelor Degree in Business Administration. I also attended Spartanburg
+Methodist College on a full athletic scholarship and earned an associate’s degree. I am highly qualified in
+both middle and high school science and earned my national board certification in 2012.
+            </field>
+        </record>
+
+        <record id="student_three" model="student.student">
+            <field name="name">Drew Bell</field>
+            <field name="code">16DRBL</field>
+            <field name="biography">I am an Educator Effectiveness Strategist for the Madison Metropolitan
+School District. In his role as a Strategist, he supports principals and assistant principals across elementary,
+middle and high schools engage in the Educator Effectiveness System resulting in continuous improvement in
+teaching and learning. Jorge’s background includes elementary assistant principal as well as teaching experience
+at both elementary and middle levels.  Educational degrees include a Bachelor’s Degree in Elementary Education
+from UW-Madison and a Master’s Degree in Educational Administration from Concordia University.
+Jorge’s work is rooted in the belief that a great education is foundational to life success.
+            </field>
+        </record>
+    </data>
+</odoo>

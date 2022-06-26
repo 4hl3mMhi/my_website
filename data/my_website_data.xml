@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Teacher page. -->
+        <record id="teacher_display_page" model="website.page">
+            <field name="name">Teachers</field>
+            <field name="type">qweb</field>
+            <field name="url">/mywebsite/teachers</field>
+            <field name="is_published">True</field>
+            <field name="view_id" ref="my_website.teacher_display"/>
+            <field name="track">True</field>
+        </record>
+        <!-- Student page. -->
+        <record id="student_display_page" model="website.page">
+            <field name="name">Students</field>
+            <field name="type">qweb</field>
+            <field name="url">/mywebsite/students</field>
+            <field name="is_published">True</field>
+            <field name="view_id" ref="my_website.student_display"/>
+            <field name="track">True</field>
+        </record>
+
+        <!-- About Me page. -->
+        <record id="aboutme_page" model="website.page">
+            <field name="name">About me</field>
+            <field name="type">qweb</field>
+            <field name="url">/aboutme</field>
+            <field name="website_indexed" eval="False"/>
+            <field name="is_published">True</field>
+            <field name="key">my_website.aboutme_page</field>
+            <field name="arch" type="xml">
+                <t name="About me" t-name="my_website.aboutme_page">
+                    <t t-call="website.layout">
+                        <div id="wrap">
+                            <div style="text-align: center; margin-top:1rem">
+                                <img src="/my_website/static/img/aboutme_img.png" alt="About me"/>
+                            </div>
+                            <div class="container" style="text-align: center; margin-top:1rem">
+                                <h2>AHLEM MEHRI</h2>
+                                <h4>Odoo Senior Developer, Freelancer and Trader.</h4><br/>
+                                <p>An avid and creative developer, Able to learn and evolve quickly, very effectively<br/>
+                                   in working independently but also within a team.</p>
+                            </div>
+                            <div style="text-align: center; margin-top:3rem; margin-bottom:2rem;">
+                                <a href="https://dz.linkedin.com/in/ahlem-mehri-555748198" class="oe_link" target="_blank">
+                                    <img src="/my_website/static/img/linkedin_icon.png" alt="LinkedIn Icon" style="padding-right: 1rem"/>
+                                </a>
+                                <a href="https://github.com/4hl3mMhi" class="oe_link" target="_blank">
+                                    <img src="/my_website/static/img/github-icon.png" alt="Github Icon" style="padding-right: 1rem"/>
+                                </a>
+                                <a href="/my_website/static/img/instagram-profile.jpg" target="_blank">
+                                    <img src="/my_website/static/img/instagram-icon.png" alt="Instagram Icon"/>
+                                </a>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+
+        <!-- Teachers menu. -->
+        <record id="menu_display_teacher" model="website.menu">
+            <field name="name">Teachers</field>
+            <field name="url">/mywebsite/teachers</field>
+            <field name="page_id" ref="my_website.teacher_display_page"/>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">11</field>
+        </record>
+        <!-- Students menu. -->
+        <record id="menu_student_teacher" model="website.menu">
+            <field name="name">Students</field>
+            <field name="url">/mywebsite/students</field>
+            <field name="page_id" ref="my_website.student_display_page"/>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">12</field>
+        </record>
+        <!-- About Me menu. -->
+        <record id="menu_aboutme" model="website.menu">
+            <field name="name">About me</field>
+            <field name="url">/aboutme</field>
+            <field name="page_id" ref="my_website.aboutme_page"/>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">20</field>
+        </record>
+
+    </data>
+</odoo>

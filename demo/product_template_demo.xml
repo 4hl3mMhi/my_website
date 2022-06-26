@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- The parent category for the Courses category. -->
+        <record id="services" model="product.public.category">
+          <field name="name">Services</field>
+          <field name="sequence">25</field>
+        </record>
+
+        <!-- Adding a new category: courses -->
+        <record id="category_courses" model="product.public.category">
+            <field name="name">Courses</field>
+            <field name="parent_id" ref="my_website.services"/>
+            <field name="sequence">26</field>
+        </record>
+
+    </data>
+</odoo>

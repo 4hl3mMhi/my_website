@@ -1,0 +1,71 @@
+<?xml version="1.8" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record id="view_teacher_list" model="ir.ui.view">
+      <field name="name">teacher.teacher.list</field>
+      <field name="model">teacher.teacher</field>
+      <field name="arch" type="xml">
+        <tree string="Teachers">
+          <field name="name"/>
+          <field name="code"/>
+          <field name="course_ids" widget="many2many_tags"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- explicit form view definition -->
+    <record id="view_teacher_form" model="ir.ui.view">
+      <field name="name">teacher.teacher.form</field>
+      <field name="model">teacher.teacher</field>
+      <field name="arch" type="xml">
+        <form string="Teacher">
+          <sheet>
+            <div class="oe_title">
+              <label for="name" class="oe_edit_only"/>
+              <h1><field name="name"/></h1>
+              <label for="code" class="oe_edit_only"/>
+              <h2><field name="code"/></h2>
+            </div>
+            <div>
+              <label for="course_ids"/>
+              <field name="course_ids" widget="many2many_tags" options="{'no_quick_create': True}"/>
+            </div>
+            <label for="biography"/>
+            <field name="biography"/>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record id="action_teacher_form" model="ir.actions.act_window">
+      <field name="name">Teachers</field>
+      <field name="res_model">teacher.teacher</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="view_teacher_list"/>
+      <field name="context">{}</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Create a Teacher
+        </p>
+      </field>
+    </record>
+
+    <!-- server action to the one above -->
+    <!--
+        <record model="ir.actions.server" id="my_website.action_server">
+          <field name="name">my_website server</field>
+          <field name="model_id" ref="model_my_website_my_website"/>
+          <field name="state">code</field>
+          <field name="code">
+            action = {
+              "type": "ir.actions.act_window",
+              "view_mode": "tree,form",
+              "res_model": model._name,
+            }
+          </field>
+        </record>
+    -->
+  </data>
+</odoo>

@@ -1,0 +1,51 @@
+<?xml version="1.8" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record id="view_course_list" model="ir.ui.view">
+      <field name="name">course.course.list</field>
+      <field name="model">product.template</field>
+      <field name="arch" type="xml">
+        <tree string="Courses">
+          <field name="name"/>
+          <field name="teacher_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- explicit form view definition -->
+    <record id="view_course_form" model="ir.ui.view">
+      <field name="name">course.course.form</field>
+      <field name="model">product.template</field>
+      <field name="arch" type="xml">
+        <form string="Course">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="teacher_id"/>
+            </group>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers"/>
+            <field name="message_ids" widget="mail_thread"/>
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record id="action_course_form" model="ir.actions.act_window">
+      <field name="name">Courses</field>
+      <field name="res_model">product.template</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="view_course_list"/>
+      <field name="domain">[('public_categ_ids.name', '=', 'Courses')]</field>
+      <field name="context">{}</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Create a Course
+        </p>
+      </field>
+    </record>
+  </data>
+</odoo>
